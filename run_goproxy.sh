@@ -10,7 +10,7 @@ if [ `cat /etc/my_ip_addr.conf | wc -l` -eq "0" ] ; then
 	 read temp_first
 	 if [ $temp_first -eq "1" ] ; then
 	     echo "正在获取vps外网ip"
-	     ip_addr=`curl ifconfig.me`
+	     ip_addr=`curl ip.sb`
 		 echo $ip_addr >> /etc/my_ip_addr.conf
 		 echo "获取vps外网ip成功 ip是 $ip_addr"
 		 echo "如果设置错误请删除/etc/my_ip_addr 使用rm -f /etc/my_ip_addr.conf 指令"
